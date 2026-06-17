@@ -1,131 +1,180 @@
+    /* 
+      정보보안실 정보보안팀 최수빈 인턴 작성 예시입니다.
+    */
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 나눔스퀘어라운드 폰트: 가독성이 좋고 귀여운 느낌이라 선택했습니다 -->
 <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css" rel="stylesheet">
 <title>하이엠수학 개인정보 처리방침</title>
 <style>
+    /* 
+      1. 전체 페이지 기본 설정
+      배경색이랑 기본 폰트, 여백처럼 스타일 코드입니다.
+    */
     body {
         font-family: 'NanumSquareRound', sans-serif;
-        background-color: #f8fbff; /* 더 밝고 깨끗한 배경 */
+        background-color: #f8fbff;
         color: #333;
         margin: 0;
         padding: 40px 20px;
+        line-height: 1.6;
     }
 
-    .header-container { text-align: center; margin-bottom: 50px; }
+    /* 
+      2. 페이지 헤더 (제목 영역)
+      맨 위에 들어가는 제목이랑 안내 문구입니다. 
+      중앙정렬했습니다.
+    */
+    .header-container { text-align: center; margin-bottom: 60px; }
     .header-container h1 { color: #0072CE; font-size: 2.2em; font-weight: 800; margin-bottom: 10px; }
-    .header-container p { color: #666; font-size: 1.1em; }
+    .header-container p { color: #666; font-size: 1.2em; }
 
+    /* 
+      3. 카드 배치 (반응형)
+      화면 크기에 따라 카드가 가로로 나열되기도 하고, 세로로 줄바꿈되기도 합니다.
+      CSS Grid를 써서 반응형입니다.
+    */
     .card-container {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 24px;
-        max-width: 1100px;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
         margin: 0 auto;
     }
 
-    /* 디자인 개선: 굵은 테두리 제거 -> 은은한 그림자와 얇은 테두리 사용 */
+    /* 
+      4. 개별 카드 디자인
+       테두리는 얇게, 그림자 넣었습니다.
+    */
     .card {
         background: #fff;
-        border: 1px solid #e1e8ed; /* 테두리 얇게 */
+        border: 1px solid #e1e8ed;
         border-radius: 20px;
-        padding: 30px;
-        box-shadow: 0 10px 20px rgba(0, 114, 206, 0.05); /* 은은한 그림자 */
+        padding: 40px;
+        box-shadow: 0 10px 30px rgba(0, 114, 206, 0.05);
         transition: transform 0.3s ease;
     }
     .card:hover { transform: translateY(-5px); }
 
-    .img-container {
-        font-size: 3em;
-        margin-bottom: 20px;
-        text-align: center;
-    }
+    /* 
+      5. 상단 아이콘 영역
+      카드 맨 위에 들어가는 이모지를 가운데 정렬했습니다.
+    */
+    .img-container { font-size: 3.5em; margin-bottom: 25px; text-align: center; }
 
+    /* 
+      6. 제목 스타일
+      카드 제목이랑 부제목에 메가스터디 메인 컬러(블루) 사용했습니다.
+    */
     .card h2 { 
-        font-size: 1.3em; color: #0072CE; text-align: center; margin-bottom: 15px; 
-        font-weight: 700;
+        font-size: 1.4em; color: #0072CE; text-align: center; margin-bottom: 15px; 
+        font-weight: 800;
     }
     .card h3 { 
-        font-size: 0.95em; color: #0072CE; background: #eef7ff;
-        padding: 8px; border-radius: 10px; text-align: center; margin-bottom: 20px;
+        font-size: 1.05em; color: #0072CE; background: #eef7ff;
+        padding: 10px 20px; border-radius: 15px; text-align: center; margin-bottom: 25px;
     }
-    .card ul { padding-left: 20px; margin: 0; }
-    .card li { margin-bottom: 12px; line-height: 1.5; font-size: 0.95em; color: #555; }
     
+    /* 
+      7. 내용(본문) 스타일
+      줄간격을 띄우고 글자 크기 조절했습니다.
+    */
+    .card ul { padding-left: 20px; margin: 0; }
+    .card li { margin-bottom: 15px; font-size: 1.05em; color: #444; }
+    .card strong { color: #0072CE; }
+    
+    /* 
+      8. 강조 효과(형광펜)
+      중요한 내용은 형광펜 효과 줬습니다.
+    */
     .highlight { background: linear-gradient(to top, #cce4ff 40%, transparent 40%); font-weight: 600; }
+    
+    /* 
+      9. 푸터(하단 영역)
+      페이지 맨 아래쪽에 저작권 문구 넣었습니다.
+    */
+    .footer { text-align: center; margin-top: 60px; color: #999; font-size: 0.9em; }
 </style>
 </head>
 <body>
 
+<!-- 헤더 영역: 제목 및 설명 -->
 <div class="header-container">
     <h1>하이엠수학 개인정보 처리방침</h1>
-    <p>우리 친구들의 소중한 정보를 어떻게 지키는지 알려줄게요!</p>
+    <p>우리 친구들의 소중한 정보를 어떻게 지키고 있는지 자세히 알려줄게요!</p>
 </div>
 
+<!-- 콘텐츠 영역: 정보 카드 배열 -->
 <div class="card-container">
     <div class="card">
         <div class="img-container">📝</div>
-        <h2>1. 어떤 정보를 받나요?</h2>
-        <h3>"공부하기 위해 꼭 필요한 정보만!"</h3>
+        <h2>1. 어떤 개인정보를 받나요?</h2>
+        <h3>"꼭 필요한 정보만 소중히 받아요"</h3>
         <ul>
-            <li><strong>회원 정보:</strong> 아이디, 비밀번호, 이름, 생년월일</li>
-            <li><strong>보호자 정보:</strong> 동의 확인을 위한 이름과 연락처</li>
-            <li><strong>학습 기록:</strong> 성적과 문제 풀이 정보</li>
+            <li><strong>계정 정보:</strong> 친구가 누구인지 확인하고 강의실을 만들기 위해 아이디, 비밀번호, 이름, 생년월일, 학교명 등을 수집합니다.</li>
+            <li><strong>보호자 동의:</strong> 14세 미만 친구라면 부모님의 동의를 확인하기 위해 보호자 연락처와 이름이 필요합니다.</li>
+            <li><strong>학습 기록:</strong> 공부를 효과적으로 돕기 위해 수강 기록과 수학 성적 정보를 안전하게 저장합니다.</li>
         </ul>
     </div>
     
     <div class="card">
         <div class="img-container">💡</div>
-        <h2>2. 어디에 쓰나요?</h2>
-        <h3>"약속된 곳에만 안전하게 사용해요"</h3>
+        <h2>2. 내 정보는 어디에 쓰나요?</h2>
+        <h3>"약속한 용도에만 안전하게!"</h3>
         <ul>
-            <li>딱 맞는 <strong>학습 자료</strong> 추천</li>
-            <li>선생님과 <strong>소통</strong>하고 이벤트 알림</li>
-            <li>다른 목적으로 쓸 땐 <span class="highlight">꼭! 다시 허락받을게요</span></li>
+            <li><strong>학습 추천:</strong> 우리 친구에게 적합한 수학 문제와 강의를 찾아서 추천해 줄 때 사용합니다.</li>
+            <li><strong>소통 및 안내:</strong> 학습 소식을 전달하거나 교재 배송 등 서비스를 제공할 때 사용합니다.</li>
+            <li><strong>변경 시 안내:</strong> <span class="highlight">만약 다른 목적으로 정보를 사용해야 한다면?</span> 반드시 친구와 부모님께 다시 안내하고 허락을 구하겠습니다.</li>
         </ul>
     </div>
 
     <div class="card">
         <div class="img-container">📱</div>
         <h2>3. 자동으로 모이는 정보</h2>
-        <h3>"서비스 이용을 편리하게!"</h3>
+        <h3>"더 편리한 이용을 위해서예요"</h3>
         <ul>
-            <li>오류 방지를 위한 <strong>기기 정보</strong></li>
-            <li>더 재밌는 추천을 위한 <strong>방문 기록(쿠키)</strong></li>
+            <li><strong>기기 정보:</strong> 앱이나 홈페이지 이용 중 발생하는 기술적 오류를 확인하고 해결하기 위해 확인합니다.</li>
+            <li><strong>방문 기록(쿠키):</strong> 친구의 학습 취향을 파악하여 더 재밌고 유익한 자료를 추천하기 위해 확인합니다.</li>
         </ul>
     </div>
 
     <div class="card">
         <div class="img-container">🤝</div>
         <h2>4. 다른 회사에 주나요?</h2>
-        <h3>"몰래 주지 않아요!"</h3>
+        <h3>"함부로 주지 않아요!"</h3>
         <ul>
-            <li>학원 상담 등 <strong>꼭 필요한 경우</strong>에만</li>
-            <li>부모님께 <span class="highlight">먼저 허락받고</span> 전달</li>
+            <li>학원 상담 관리 등 <strong>업무상 꼭 필요한 경우</strong>에만 정보를 주고 있습니다.</li>
+            <li>다른 기관에 보낼 때는 <span class="highlight">부모님께 먼저 허락을 구한 뒤,</span> 정말 필요한 정보만 정해서 전달합니다.</li>
         </ul>
     </div>
 
     <div class="card">
         <div class="img-container">🚚</div>
         <h2>5. 다른 곳에 일을 맡기나요?</h2>
-        <h3>"우리를 도와주는 회사예요!"</h3>
+        <h3>"안전하게 관리하고 있어요"</h3>
         <ul>
-            <li>교재 배송이나 선물 전달 등 <strong>필수 업무</strong></li>
-            <li>정보를 잘 지키는지 <strong>항상 감시</strong>하고 있어요</li>
+            <li>교재 배송이나 이벤트 경품 발송 등 <strong>필수 업무</strong>를 위해 협력하는 업체들이 있습니다.</li>
+            <li>이 업체들이 우리 친구의 정보를 적법하게 다루는지 <strong>정기적으로 감시</strong>하고 있으니 안심하세요.</li>
         </ul>
     </div>
 
     <div class="card">
         <div class="img-container">🗑️</div>
-        <h2>6. 언제 지우나요?</h2>
+        <h2>6. 언제 지워지나요?</h2>
         <h3>"사용이 끝나면 깨끗하게!"</h3>
         <ul>
-            <li>탈퇴 시 <strong>흔적 없이 완전 삭제</strong></li>
-            <li>약속한 날짜가 되면 즉시 파기</li>
+            <li>하이엠수학을 탈퇴하면 친구의 정보는 흔적도 남지 않게 <strong>즉시 완전히 삭제</strong>됩니다.</li>
+            <li>법에서 정한 약속된 보관 기간이 지나면, 즉시 파기하는 것을 원칙으로 합니다.</li>
         </ul>
     </div>
 </div>
+
+<div class="footer">
+    Copyright © megastudy.co.,Ltd. All rights reserved.
+</div>
+
 </body>
 </html>
