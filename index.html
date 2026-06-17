@@ -3,99 +3,58 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
-<title>하이엠수학 아동용 개인정보 처리방침</title>
+<link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css" rel="stylesheet">
+<title>하이엠수학 개인정보 처리방침</title>
 <style>
-    /* 1. 기본 스타일 설정입니다.
-      전체 페이지에 'Jua' 폰트를 적용하여 아동 친화적이고 키치한 분위기를 조성하였습니다.
-    */
     body {
-        font-family: 'Jua', sans-serif;
-        background-color: #f0f7ff;
-        color: #222;
+        font-family: 'NanumSquareRound', sans-serif;
+        background-color: #f8fbff; /* 더 밝고 깨끗한 배경 */
+        color: #333;
         margin: 0;
-        padding: 50px 20px;
+        padding: 40px 20px;
     }
 
-    /* 2. 헤더 디자인입니다.
-      입체적인 텍스트 그림자와 둥근 배너 디자인을 적용하여 
-      단순한 제목을 넘어선 '시각적 타이틀'로 구현하였습니다.
-    */
-    .header-container {
-        text-align: center;
-        margin-bottom: 60px;
-    }
-    .header-container h1 {
-        font-size: 3em;
-        color: #0072CE;
-        margin-bottom: 20px;
-        text-shadow: 4px 4px 0px #fff;
-    }
-    .header-container p {
-        background: #fff;
-        display: inline-block;
-        padding: 15px 40px;
-        border: 3px solid #0072CE;
-        border-radius: 50px;
-        font-size: 1.4em;
-        box-shadow: 5px 5px 0px #0072CE;
-    }
+    .header-container { text-align: center; margin-bottom: 50px; }
+    .header-container h1 { color: #0072CE; font-size: 2.2em; font-weight: 800; margin-bottom: 10px; }
+    .header-container p { color: #666; font-size: 1.1em; }
 
-    /* 3. 카드 그리드 레이아웃입니다.
-      다양한 디바이스에서 최적의 가독성을 보여주도록 Grid를 활용하였습니다.
-    */
     .card-container {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: 40px;
-        max-width: 1200px;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 24px;
+        max-width: 1100px;
         margin: 0 auto;
     }
 
-    /* 4. 카드 UI 디자인입니다.
-      둥근 모서리와 굵은 테두리, 그리고 오프셋(Offset) 그림자를 사용하여
-      스티커를 붙여놓은 듯한 '키치(Kitsch)' 스타일을 완성하였습니다.
-    */
+    /* 디자인 개선: 굵은 테두리 제거 -> 은은한 그림자와 얇은 테두리 사용 */
     .card {
         background: #fff;
-        border: 4px solid #0072CE;
-        border-radius: 30px;
-        padding: 40px;
-        box-shadow: 10px 10px 0px #0072CE;
-        display: flex;
-        flex-direction: column;
+        border: 1px solid #e1e8ed; /* 테두리 얇게 */
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 10px 20px rgba(0, 114, 206, 0.05); /* 은은한 그림자 */
         transition: transform 0.3s ease;
     }
-    .card:hover { transform: translate(-5px, -5px); }
+    .card:hover { transform: translateY(-5px); }
 
-    /* 5. 정렬이 보완된 아이콘 컨테이너입니다.
-      Flexbox를 통해 완벽한 수직/수평 중앙 정렬을 구현하였습니다.
-    */
     .img-container {
-        width: 120px;
-        height: 120px;
-        background: #e6f2ff;
-        border: 4px solid #0072CE;
-        border-radius: 50%;
-        margin: 0 auto 25px auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 4em;
+        font-size: 3em;
+        margin-bottom: 20px;
+        text-align: center;
     }
 
-    /* 6. 상세 텍스트 스타일입니다.
-      이전보다 훨씬 자세한 내용을 포함하여 가독성을 높였습니다.
-    */
-    .card h2 { font-size: 1.8em; color: #0072CE; text-align: center; margin-bottom: 15px; }
+    .card h2 { 
+        font-size: 1.3em; color: #0072CE; text-align: center; margin-bottom: 15px; 
+        font-weight: 700;
+    }
     .card h3 { 
-        font-size: 1.2em; color: #fff; background: #0072CE; 
-        padding: 10px 20px; border-radius: 20px; text-align: center; margin-bottom: 25px;
+        font-size: 0.95em; color: #0072CE; background: #eef7ff;
+        padding: 8px; border-radius: 10px; text-align: center; margin-bottom: 20px;
     }
-    .card li { margin-bottom: 15px; line-height: 1.7; font-size: 1.15em; }
-    .highlight { background: linear-gradient(to top, #ffeaa7 40%, transparent 40%); }
-
-    .footer { text-align: center; margin-top: 60px; color: #888; font-size: 1.1em; }
+    .card ul { padding-left: 20px; margin: 0; }
+    .card li { margin-bottom: 12px; line-height: 1.5; font-size: 0.95em; color: #555; }
+    
+    .highlight { background: linear-gradient(to top, #cce4ff 40%, transparent 40%); font-weight: 600; }
 </style>
 </head>
 <body>
@@ -108,70 +67,65 @@
 <div class="card-container">
     <div class="card">
         <div class="img-container">📝</div>
-        <h2>1. 어떤 개인정보를<br>받고 있나요?</h2>
-        <h3>"꼭! 필요한 정보만 받아요"</h3>
+        <h2>1. 어떤 정보를 받나요?</h2>
+        <h3>"공부하기 위해 꼭 필요한 정보만!"</h3>
         <ul>
-            <li><strong>회원가입 시:</strong> 친구가 누구인지 확인하고 강의실을 만들기 위해 이름, 아이디, 비밀번호, 생년월일, 학교명 등을 수집해요.</li>
-            <li><strong>부모님 동의 시:</strong> 14살 미만 친구라면 부모님이 허락해주셨는지 확인하기 위해 보호자의 이름과 연락처가 필요해요.</li>
-            <li><strong>학습 시:</strong> 공부를 잘할 수 있도록 문제 풀이 기록과 성적 정보를 모아요.</li>
+            <li><strong>회원 정보:</strong> 아이디, 비밀번호, 이름, 생년월일</li>
+            <li><strong>보호자 정보:</strong> 동의 확인을 위한 이름과 연락처</li>
+            <li><strong>학습 기록:</strong> 성적과 문제 풀이 정보</li>
         </ul>
     </div>
     
     <div class="card">
         <div class="img-container">💡</div>
-        <h2>2. 내 정보는<br>어디에 쓰나요?</h2>
-        <h3>"약속된 곳에만 사용해요!"</h3>
+        <h2>2. 어디에 쓰나요?</h2>
+        <h3>"약속된 곳에만 안전하게 사용해요"</h3>
         <ul>
-            <li>우리 친구에게 <strong>딱 맞는 수학 문제와 학습 정보</strong>를 추천해 주기 위해 사용해요.</li>
-            <li>중요한 학습 소식을 알려주거나, 교재를 집으로 안전하게 배달할 때 써요.</li>
-            <li><span class="highlight">만약 다른 곳에 써야 한다면?</span> 꼭! 친구와 부모님께 다시 허락을 받을게요.</li>
+            <li>딱 맞는 <strong>학습 자료</strong> 추천</li>
+            <li>선생님과 <strong>소통</strong>하고 이벤트 알림</li>
+            <li>다른 목적으로 쓸 땐 <span class="highlight">꼭! 다시 허락받을게요</span></li>
         </ul>
     </div>
 
     <div class="card">
         <div class="img-container">📱</div>
-        <h2>3. 자동으로 모이는<br>정보도 있나요?</h2>
-        <h3>"더 편리한 이용을 위해서예요"</h3>
+        <h2>3. 자동으로 모이는 정보</h2>
+        <h3>"서비스 이용을 편리하게!"</h3>
         <ul>
-            <li>친구가 하이엠수학 앱을 쓰면서 겪는 오류는 없는지 확인하기 위해 <strong>기기 정보</strong>를 자동으로 확인해요.</li>
-            <li>어떤 강의를 많이 보는지 파악하여, 더 재밌고 유익한 자료를 보여주기 위해 <strong>방문 기록(쿠키)</strong>을 확인해요.</li>
+            <li>오류 방지를 위한 <strong>기기 정보</strong></li>
+            <li>더 재밌는 추천을 위한 <strong>방문 기록(쿠키)</strong></li>
         </ul>
     </div>
 
     <div class="card">
         <div class="img-container">🤝</div>
-        <h2>4. 내 정보를<br>다른 회사에 주나요?</h2>
-        <h3>"함부로 주지 않아요!"</h3>
+        <h2>4. 다른 회사에 주나요?</h2>
+        <h3>"몰래 주지 않아요!"</h3>
         <ul>
-            <li>하이엠수학 학원(가맹점) 선생님께 상담을 받아야 할 때처럼, <strong>꼭 필요한 서비스</strong>를 이용할 때만 전달해요.</li>
-            <li>다른 회사에 보낼 때는 반드시 부모님께 <span class="highlight">먼저 물어보고 허락을 받을 때만</span> 전달한답니다.</li>
+            <li>학원 상담 등 <strong>꼭 필요한 경우</strong>에만</li>
+            <li>부모님께 <span class="highlight">먼저 허락받고</span> 전달</li>
         </ul>
     </div>
 
     <div class="card">
         <div class="img-container">🚚</div>
-        <h2>5. 다른 곳에 일을<br>맡기나요?</h2>
+        <h2>5. 다른 곳에 일을 맡기나요?</h2>
         <h3>"우리를 도와주는 회사예요!"</h3>
         <ul>
-            <li>교재 배송이나 이벤트 경품 전달 등, 하이엠수학을 도와주는 회사들이 있어요.</li>
-            <li>이 회사들이 우리 친구의 정보를 잘 지키는지 <strong>항상 꼼꼼하게 확인</strong>하고 있으니 걱정 마세요!</li>
+            <li>교재 배송이나 선물 전달 등 <strong>필수 업무</strong></li>
+            <li>정보를 잘 지키는지 <strong>항상 감시</strong>하고 있어요</li>
         </ul>
     </div>
 
     <div class="card">
         <div class="img-container">🗑️</div>
-        <h2>6. 정보는 언제<br>지워지나요?</h2>
+        <h2>6. 언제 지우나요?</h2>
         <h3>"사용이 끝나면 깨끗하게!"</h3>
         <ul>
-            <li>하이엠수학을 탈퇴하면 친구의 정보는 흔적도 남지 않게 <strong>완전히 지워버려요.</strong></li>
-            <li>법에서 정한 약속된 기간 동안만 잠시 보관했다가, 약속한 날짜가 되면 즉시 파기한답니다.</li>
+            <li>탈퇴 시 <strong>흔적 없이 완전 삭제</strong></li>
+            <li>약속한 날짜가 되면 즉시 파기</li>
         </ul>
     </div>
 </div>
-
-<div class="footer">
-    Copyright © megastudy.co.,Ltd. All rights reserved.
-</div>
-
 </body>
 </html>
