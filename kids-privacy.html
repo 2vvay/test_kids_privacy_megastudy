@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>하이엠수학 아동용 개인정보 처리방침</title>
+<style>
+    /* 
+      1. 기본 배경 및 폰트 설정 
+      밝고 귀여운 느낌을 주기 위해 배경색을 약간의 아이보리 톤으로 맞추고,
+      글씨가 둥글고 또렷하게 보이도록 설정했습니다.
+    */
+    body {
+        font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+        background-color: #fcfbf9;
+        color: #333333;
+        margin: 0;
+        padding: 50px 20px;
+    }
+
+    /* 
+      2. 상단 헤더 영역 
+      키치한 느낌을 살리기 위해 제목의 자간을 좁히고 이모지를 적극적으로 활용했습니다.
+    */
+    .header-container {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    .header-container h1 {
+        color: #004b96; /* 메가 블루 */
+        font-size: 2.3em;
+        font-weight: 900;
+        margin-bottom: 15px;
+        letter-spacing: -0.05em;
+        text-shadow: 2px 2px 0px #ffeaa7; /* 키치한 느낌의 텍스트 그림자 */
+    }
+    .header-container p {
+        color: #555555;
+        font-size: 1.15em;
+        font-weight: 600;
+        word-break: keep-all;
+    }
+
+    /* 
+      3. 카드 그리드 레이아웃 
+      디바이스 환경에 맞춰 자동으로 줄바꿈되는 반응형 그리드입니다.
+    */
+    .card-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    /* 
+      4. 개별 카드 컨테이너 (키치 & 팝 스타일)
+      둥글고 굵은 테두리와, 어긋난 단색 그림자(Solid Shadow)를 사용하여 
+      마치 다이어리 꾸미기나 팝업북 같은 통통 튀는 느낌을 줍니다.
+    */
+    .card {
+        background-color: #ffffff;
+        border-radius: 24px;
+        border: 3px solid #004b96; /* 굵고 진한 테두리 */
+        box-shadow: 6px 6px 0px #f39c12; /* 메가 옐로우/오렌지 단색 그림자 */
+        padding: 35px 25px;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        display: flex;
+        flex-direction: column;
+    }
+    .card:hover {
+        transform: translate(-3px, -3px);
+        box-shadow: 9px 9px 0px #f39c12; /* 마우스 오버 시 입체감 증가 */
+    }
+
+    /* 
+      5. 이모지 아이콘 영역
+      별도의 이미지 파일 없이, 동그란 원 안에 이모지를 큼직하게 배치하여 
+      캐릭터를 대신하는 귀여운 아이콘으로 만들었습니다.
+    */
+    .img-placeholder {
+        font-size: 3em;
+        text-align: center;
+        background-color: #e9f2fb; /* 연한 블루 배경 */
+        border: 2px solid #004b96;
+        border-radius: 50%;
+        width: 85px;
+        height: 85px;
+        line-height: 85px;
+        margin: 0 auto 20px auto;
+        box-shadow: 3px 3px 0px #004b96; /* 아이콘에도 키치한 그림자 적용 */
+    }
+
+    /* 
+      6. 카드 텍스트 스타일 
+      아이들이 읽기 편하도록 줄간격을 넓히고 부드러운 색상을 사용했습니다.
+    */
+    .card h2 {
+        font-size: 1.3em;
+        color: #004b96;
+        margin: 0 0 10px 0;
+        text-align: center;
+        font-weight: 800;
+    }
+    .card h3 {
+        font-size: 1.05em;
+        color: #e67e22;
+        margin: 0 0 20px 0;
+        text-align: center;
+        word-break: keep-all;
+        line-height: 1.4;
+        background-color: #fff4e6;
+        padding: 10px;
+        border-radius: 12px;
+    }
+    .card ul {
+        padding-left: 22px;
+        margin: 0;
+        flex-grow: 1; 
+    }
+    .card li {
+        margin-bottom: 12px;
+        line-height: 1.6;
+        font-size: 1em;
+        color: #333333;
+        font-weight: 500;
+    }
+
+    /* 
+      7. 형광펜 하이라이트 효과
+      글자 배경 절반만 칠해지는 리얼한 형광펜 효과로 시선을 사로잡습니다.
+    */
+    .highlight {
+        font-weight: 800;
+        color: #004b96;
+        background: linear-gradient(to top, #ffeaa7 40%, transparent 40%);
+    }
+</style>
+</head>
+<body>
+
+<div class="header-container">
+    <h1>🧸 하이엠수학 개인정보 처리방침 쉽게 알아보기 🔍</h1>
+    <p>여러분이 안심하고 공부할 수 있도록, 소중한 정보를 어떻게 다루는지 알려줄게요!</p>
+</div>
+
+<div class="card-container">
+    
+    <div class="card">
+        <div class="img-placeholder">📝✨</div>
+        <h2>1. 어떤 개인정보를 받나요?</h2>
+        <h3>"공부하기 위해 꼭! 필요한 정보만 받아요."</h3>
+        <ul>
+            <li>누구인지 아는 데 필요한 <strong>아이디, 비밀번호, 이름, 생년월일</strong></li>
+            <li>14살이 안 된 친구들은 부모님의 허락을 확인하기 위해 <strong>보호자 이름과 핸드폰 번호</strong></li>
+            <li>공부를 도와주기 위해 <strong>수강 기록과 수학 성적</strong>도 받을 수 있어요.</li>
+        </ul>
+    </div>
+    
+    <div class="card">
+        <div class="img-placeholder">🎁🎈</div>
+        <h2>2. 내 정보는 어디에 쓰나요?</h2>
+        <h3>"허락받은 용도에만 안전하게 사용해요."</h3>
+        <ul>
+            <li>딱 맞는 <strong>학습 자료</strong>를 주고, 선생님과 <strong>소통</strong>할 때 써요.</li>
+            <li>새로운 소식을 알리고 신나는 <strong>이벤트 선물</strong>을 줄 때 사용해요.</li>
+            <li>다른 일에 써야 한다면? <span class="highlight">꼭! 여러분에게 다시 허락을 받을게요.</span></li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <div class="img-placeholder">🙅‍♀️🔒</div>
+        <h2>3. 내 정보를 다른 회사에 주나요?</h2>
+        <h3>"허락하지 않은 곳에는 몰래 주지 않아요!"</h3>
+        <ul>
+            <li>여러분이 하이엠수학 학원(가맹점)에서 직접 관리를 받아야 할 때처럼, 다른 곳의 서비스를 이용할 때 정보를 줄 수 있어요.</li>
+            <li>하지만 이때도 <span class="highlight">반드시 먼저 허락을 받고, 꼭 필요한 정보만</span> 준답니다.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <div class="img-placeholder">🛵📦</div>
+        <h2>4. 내 정보를 다른 곳에 맡기나요?</h2>
+        <h3>"우리를 도와주는 회사들이 안전하게 쓰는지 확인해요."</h3>
+        <ul>
+            <li>교재를 집으로 보내거나 이벤트 선물을 배달할 때, 다른 회사에 잠시 일을 맡기고 있어요.</li>
+            <li>일을 도와주는 회사들이 <span class="highlight">안전하게 다루는지 항상 지켜보고 있으니</span> 걱정하지 마세요!</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <div class="img-placeholder">💥🗑️</div>
+        <h2>5. 개인정보는 언제 지워지나요?</h2>
+        <h3>"사용이 끝난 개인정보는 흔적도 없이 지워버려요!"</h3>
+        <ul>
+            <li>여러분이 하이엠수학을 그만 이용하면(탈퇴), 여러분의 정보는 알아볼 수 없게 <strong>완전히 지워버린답니다.</strong></li>
+            <li>단, 법에서 보관하라고 정한 정보 등은 약속된 기간 동안만 금고에 안전하게 보관했다가 지워요.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <div class="img-placeholder">🙋‍♀️📞</div>
+        <h2>6. 궁금한 점이 있으면 어떻게 하나요?</h2>
+        <h3>"내 정보에 대해 언제든지 당당하게 물어볼 수 있어요."</h3>
+        <ul>
+            <li>"내 정보를 고쳐주세요!", "내 정보를 지워주세요!" 언제든지 홈페이지에서 요청할 수 있어요.</li>
+            <li>여러분의 개인정보를 지켜주는 책임자 선생님께 언제든 연락해 주세요!
+                <br><br>📞 <strong>전화번호:</strong> 1544-2300
+                <br>📧 <strong>이메일:</strong> privacy@mbest.co.kr
+            </li>
+        </ul>
+    </div>
+    
+</div>
+
+</body>
+
+
+</html>
