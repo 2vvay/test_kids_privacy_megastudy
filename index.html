@@ -6,110 +6,120 @@
 <title>하이엠수학 아동용 개인정보 처리방침</title>
 <style>
     /* 
-      1. 기본 배경 및 폰트 설정 
-      밝고 귀여운 느낌을 주기 위해 배경색을 약간의 아이보리 톤으로 맞추고,
-      글씨가 둥글고 또렷하게 보이도록 설정했습니다.
+      1. 기본 환경 설정에 대한 코드입니다.
+      아동이 읽기 편안하도록 밝은 배경을 적용하였으며,
+      메가스터디의 브랜드 컬러(Pantone 285 C, #0072CE)와 조화를 이루도록 구성하였습니다.
     */
     body {
         font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
-        background-color: #fcfbf9;
+        background-color: #f8fbff;
         color: #333333;
         margin: 0;
         padding: 50px 20px;
     }
 
     /* 
-      2. 상단 헤더 영역 
-      키치한 느낌을 살리기 위해 제목의 자간을 좁히고 이모지를 적극적으로 활용했습니다.
+      2. 상단 헤더 영역(타이틀 및 설명 문구) 배치에 대한 코드입니다.
+      메가스터디 심볼 블루 컬러를 사용하여 제목의 가시성을 높였으며,
+      안정감을 주기 위해 중앙 정렬을 적용하였습니다.
     */
     .header-container {
         text-align: center;
         margin-bottom: 50px;
     }
     .header-container h1 {
-        color: #004b96; /* 메가 블루 */
+        color: #0072CE; /* 메가스터디 심볼 블루 */
         font-size: 2.3em;
-        font-weight: 900;
+        font-weight: 800;
         margin-bottom: 15px;
         letter-spacing: -0.05em;
-        text-shadow: 2px 2px 0px #ffeaa7; /* 키치한 느낌의 텍스트 그림자 */
     }
     .header-container p {
         color: #555555;
-        font-size: 1.15em;
+        font-size: 1.1em;
         font-weight: 600;
         word-break: keep-all;
     }
 
     /* 
-      3. 카드 그리드 레이아웃 
-      디바이스 환경에 맞춰 자동으로 줄바꿈되는 반응형 그리드입니다.
+      3. 반응형 카드 그리드 레이아웃에 대한 코드입니다.
+      사용자의 디바이스(PC, 태블릿, 모바일) 화면 크기에 따라 
+      카드의 배열이 유연하게 자동 조정되도록 Grid 속성을 활용하였습니다.
     */
     .card-container {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
         gap: 30px;
         max-width: 1200px;
-        margin: 0 auto;
+        margin: 0 auto 50px auto;
     }
 
     /* 
-      4. 개별 카드 컨테이너 (키치 & 팝 스타일)
-      둥글고 굵은 테두리와, 어긋난 단색 그림자(Solid Shadow)를 사용하여 
-      마치 다이어리 꾸미기나 팝업북 같은 통통 튀는 느낌을 줍니다.
+      4. 개별 카드 컨테이너 디자인에 대한 코드입니다.
+      라운드 처리된 박스에 메가 블루 컬러의 테두리와 부드러운 그림자를 부여하여
+      시각적인 안정감을 제공하며, 마우스 오버 시 입체감이 생기도록 설정하였습니다.
     */
     .card {
         background-color: #ffffff;
-        border-radius: 24px;
-        border: 3px solid #004b96; /* 굵고 진한 테두리 */
-        box-shadow: 6px 6px 0px #f39c12; /* 메가 옐로우/오렌지 단색 그림자 */
+        border-radius: 20px;
+        border: 2px solid #0072CE;
+        box-shadow: 0 8px 20px rgba(0, 114, 206, 0.08);
         padding: 35px 25px;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
         display: flex;
         flex-direction: column;
     }
     .card:hover {
-        transform: translate(-3px, -3px);
-        box-shadow: 9px 9px 0px #f39c12; /* 마우스 오버 시 입체감 증가 */
+        transform: translateY(-5px);
+        box-shadow: 0 12px 25px rgba(0, 114, 206, 0.15);
     }
 
     /* 
-      5. 이모지 아이콘 영역
-      별도의 이미지 파일 없이, 동그란 원 안에 이모지를 큼직하게 배치하여 
-      캐릭터를 대신하는 귀여운 아이콘으로 만들었습니다.
+      5. 일러스트 및 아이콘 정렬에 대한 코드입니다.
+      삽입되는 이미지(img)가 원형 배경의 상하좌우 정중앙에 위치하도록 
+      Flexbox를 사용하여 정렬 기준을 명확히 지정하였습니다.
     */
     .img-placeholder {
-        font-size: 3em;
-        text-align: center;
-        background-color: #e9f2fb; /* 연한 블루 배경 */
-        border: 2px solid #004b96;
+        background-color: #e6f2ff;
+        border: 2px solid #0072CE;
         border-radius: 50%;
         width: 85px;
         height: 85px;
-        line-height: 85px;
         margin: 0 auto 20px auto;
-        box-shadow: 3px 3px 0px #004b96; /* 아이콘에도 키치한 그림자 적용 */
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+    .img-placeholder img {
+        width: 50px;
+        height: auto;
+        display: block;
     }
 
     /* 
-      6. 카드 텍스트 스타일 
-      아이들이 읽기 편하도록 줄간격을 넓히고 부드러운 색상을 사용했습니다.
+      6. 카드 내부 텍스트(제목, 부제목, 본문) 타이포그래피에 대한 코드입니다.
+      단어 단위로 줄바꿈(word-break: keep-all)되도록 설정하여 
+      문장의 가독성을 훼손하지 않도록 처리하였습니다.
     */
     .card h2 {
         font-size: 1.3em;
-        color: #004b96;
+        color: #0072CE;
         margin: 0 0 10px 0;
         text-align: center;
         font-weight: 800;
+        word-break: keep-all; 
+        line-height: 1.3;
     }
     .card h3 {
         font-size: 1.05em;
-        color: #e67e22;
+        color: #ff9900; /* 서브 강조 컬러 (오렌지/옐로우 계열) */
         margin: 0 0 20px 0;
         text-align: center;
         word-break: keep-all;
         line-height: 1.4;
-        background-color: #fff4e6;
+        background-color: #fff9e6;
         padding: 10px;
         border-radius: 12px;
     }
@@ -123,31 +133,44 @@
         line-height: 1.6;
         font-size: 1em;
         color: #333333;
-        font-weight: 500;
     }
 
     /* 
-      7. 형광펜 하이라이트 효과
-      글자 배경 절반만 칠해지는 리얼한 형광펜 효과로 시선을 사로잡습니다.
+      7. 핵심 단어 강조(하이라이트) 효과에 대한 코드입니다.
+      텍스트 배경 하단에만 색상을 부여하여 실제 형광펜을 칠한 듯한 효과를 구현하였습니다.
     */
     .highlight {
         font-weight: 800;
-        color: #004b96;
+        color: #0072CE;
         background: linear-gradient(to top, #ffeaa7 40%, transparent 40%);
+    }
+
+    /* 
+      8. 화면 하단 저작권(Copyright) 표기에 대한 코드입니다.
+    */
+    .footer-container {
+        text-align: center;
+        padding-top: 20px;
+        border-top: 1px solid #e0e0e0;
+        color: #888888;
+        font-size: 0.9em;
     }
 </style>
 </head>
 <body>
 
+<!-- 상단 타이틀 영역 -->
 <div class="header-container">
-    <h1>🧸 하이엠수학 개인정보 처리방침 쉽게 알아보기 🔍</h1>
+    <h1>하이엠수학 개인정보 처리방침 쉽게 알아보기</h1>
     <p>여러분이 안심하고 공부할 수 있도록, 소중한 정보를 어떻게 다루는지 알려줄게요!</p>
 </div>
 
+<!-- 정보 안내 카드 레이아웃 영역 -->
 <div class="card-container">
     
     <div class="card">
-        <div class="img-placeholder">📝✨</div>
+        <!-- 이미지 삽입 시 📝 대신 <img src="이미지경로.png" alt="아이콘"> 을 사용합니다. -->
+        <div class="img-placeholder">📝</div>
         <h2>1. 어떤 개인정보를 받나요?</h2>
         <h3>"공부하기 위해 꼭! 필요한 정보만 받아요."</h3>
         <ul>
@@ -158,7 +181,7 @@
     </div>
     
     <div class="card">
-        <div class="img-placeholder">🎁🎈</div>
+        <div class="img-placeholder">💡</div>
         <h2>2. 내 정보는 어디에 쓰나요?</h2>
         <h3>"허락받은 용도에만 안전하게 사용해요."</h3>
         <ul>
@@ -169,7 +192,7 @@
     </div>
 
     <div class="card">
-        <div class="img-placeholder">🙅‍♀️🔒</div>
+        <div class="img-placeholder">🤝</div>
         <h2>3. 내 정보를 다른 회사에 주나요?</h2>
         <h3>"허락하지 않은 곳에는 몰래 주지 않아요!"</h3>
         <ul>
@@ -179,7 +202,7 @@
     </div>
 
     <div class="card">
-        <div class="img-placeholder">🛵📦</div>
+        <div class="img-placeholder">🚚</div>
         <h2>4. 내 정보를 다른 곳에 맡기나요?</h2>
         <h3>"우리를 도와주는 회사들이 안전하게 쓰는지 확인해요."</h3>
         <ul>
@@ -189,7 +212,7 @@
     </div>
 
     <div class="card">
-        <div class="img-placeholder">💥🗑️</div>
+        <div class="img-placeholder">🗑️</div>
         <h2>5. 개인정보는 언제 지워지나요?</h2>
         <h3>"사용이 끝난 개인정보는 흔적도 없이 지워버려요!"</h3>
         <ul>
@@ -199,7 +222,7 @@
     </div>
 
     <div class="card">
-        <div class="img-placeholder">🙋‍♀️📞</div>
+        <div class="img-placeholder">🙋‍♀️</div>
         <h2>6. 궁금한 점이 있으면 어떻게 하나요?</h2>
         <h3>"내 정보에 대해 언제든지 당당하게 물어볼 수 있어요."</h3>
         <ul>
@@ -213,7 +236,10 @@
     
 </div>
 
+<!-- 하단 저작권(Copyright) 영역 -->
+<div class="footer-container">
+    <p>Copyright © megastudy.co.,Ltd. All rights reserved.</p>
+</div>
+
 </body>
-
-
 </html>
